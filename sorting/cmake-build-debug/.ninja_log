@@ -1,0 +1,15 @@
+# ninja log v5
+5	702	7356628127410322	CMakeFiles/sorting.dir/main.cpp.obj	8c56a9ff2b1eadfc
+7	342	7355811056281460	CMakeFiles/sorting.dir/Student.cpp.obj	a62d2af645213a17
+703	828	7356628128667218	sorting.exe	6c0dd0b1fc76cdbb
+19	892	7356630974836239	CMakeFiles/sorting.dir/Student.cpp.obj	a62d2af645213a17
+12	1288	7356630978825934	CMakeFiles/sorting.dir/main.cpp.obj	8c56a9ff2b1eadfc
+1288	1431	7356630980191903	sorting.exe	6c0dd0b1fc76cdbb
+7	1493	7356706783623521	CMakeFiles/sorting.dir/main.cpp.obj	8c56a9ff2b1eadfc
+1494	1929	7356706787852228	sorting.exe	6c0dd0b1fc76cdbb
+5	718	7356706890268653	CMakeFiles/sorting.dir/main.cpp.obj	8c56a9ff2b1eadfc
+719	828	7356706891345769	sorting.exe	6c0dd0b1fc76cdbb
+6	756	7356708631244969	CMakeFiles/sorting.dir/main.cpp.obj	8c56a9ff2b1eadfc
+757	893	7356708632561901	sorting.exe	6c0dd0b1fc76cdbb
+7	1243	7356708901437954	CMakeFiles/sorting.dir/main.cpp.obj	8c56a9ff2b1eadfc
+1244	1453	7356708903442604	sorting.exe	6c0dd0b1fc76cdbb
