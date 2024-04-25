@@ -20,7 +20,7 @@ struct Node {
 
 template<class T>
 
-class doublell : List{
+class doublell : List<T>{
 public:
     Node<T>* head{};
     Node<T>* tail{};
