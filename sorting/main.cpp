@@ -14,11 +14,14 @@ bool compGpa(const Student &s1, const Student &s2) {
     return s1.gpa < s2.gpa;
 }
 
+bool comp(const int &s1, const int &s2) {
+    return s1 < s2;
+}
+
 int main() {
-    vector <Student> v = {Student("1", "c", 3.7), Student("2", "t", 4), Student("3", "b", 3.8)};
-    Sort <Student> sort1("sortByName");
+    vector <int> v;
+    for (int i = 100000; i >= 0; i--) v.push_back(i);
+    Sort <int> sort1("sortByName");
     cout << endl;
-    sort1.sort(v, "shellsort", compName);
-    for (auto i : v)
-        cout << i.id << ' ' << i.name << ' ' << i.gpa << endl;
+    sort1.sort(v, "mergesort", comp);
 }

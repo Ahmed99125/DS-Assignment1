@@ -25,8 +25,11 @@ public:
     void selectionSort(vector <T> &data, bool (*func) (const T&, const T&));
     void insertionSort(vector <T> &data, bool (*func) (const T&, const T&));
     void shellSort(vector <T> &data, bool (*func) (const T&, const T&));
-//    void mergeSort(vector <T> &data, bool (*func) (const T&, const T&));
-//    void quickSort(vector <T> &data, bool (*func) (const T&, const T&));
+    void mergeSort(vector <T> &data, int l, int r, bool (*func) (const T&, const T&));
+    void quickSort(vector <T> &data, int l, int r, bool (*func) (const T&, const T&));
+
+    void merge(vector <T> &data, int l, int mid, int r, bool (*func) (const T&, const T&));
+    int partition(vector <T> &data, int l, int r, bool (*func) (const T&, const T&));
 };
 
 template <typename T>
@@ -49,14 +52,14 @@ void Sort<T>::sort(vector <T> &data, string algo, bool (*func) (const T&, const 
         file << "Algorithm: Shell Sort" << endl;
         shellSort(data, func);
     }
-//    else if (algo == "mergesort") {
-//        file << "Algorithm: Merge Sort" << endl;
-//        mergeSort(data, func);
-//    }
-//    else if (algo == "quicksort") {
-//        file << "Algorithm: Quick Sort" << endl;
-//        quickSort(data, func);
-//    }
+    else if (algo == "mergesort") {
+        file << "Algorithm: Merge Sort" << endl;
+        mergeSort(data, 0, data.size()-1, func);
+    }
+    else if (algo == "quicksort") {
+        file << "Algorithm: Quick Sort" << endl;
+        quickSort(data, 0, data.size()-1, func);
+    }
 
     auto end = std::chrono::high_resolution_clock::now();
 
@@ -124,6 +127,68 @@ void Sort<T>::shellSort(vector <T> &data, bool (*func) (const T&, const T&)) {
             data[j] = tmp;
         }
     }
+}
+
+template <typename T>
+void Sort<T>::mergeSort(vector <T> &data, int l, int r, bool (*func) (const T&, const T&)) {
+    if (l >= r)
+        return;
+    int mid = (l + r) / 2;
+    mergeSort(data, mid+1, r, func);
+    mergeSort(data, l, mid, func);
+    merge(data, l, mid, r, func);
+}
+
+template <typename T>
+void Sort<T>::merge(vector <T> &data, int l, int mid, int r, bool (*func) (const T&, const T&)) {
+    vector <T> leftArr, rightArr;
+
+    for (int i = l; i < mid+1; i++)
+        leftArr.push_back(data[i]);
+    for (int i = mid+1; i <= r; i++)
+        rightArr.push_back(data[i]);
+
+    int leftIdx = 0, rightIdx = 0, mergeIdx = l;
+
+    while (leftIdx < leftArr.size() && rightIdx < rightArr.size()) {
+        if (func(leftArr[leftIdx], rightArr[rightIdx])) {
+            data[mergeIdx] = leftArr[leftIdx];
+            leftIdx++;
+        }
+        else {
+            data[mergeIdx] = rightArr[rightIdx];
+            rightIdx++;
+        }
+        mergeIdx++;
+    }
+
+    while (leftIdx < leftArr.size())
+        data[mergeIdx++] = leftArr[leftIdx++];
+
+    while (rightIdx < rightArr.size())
+        data[mergeIdx++] = rightArr[rightIdx++];
+}
+
+template <typename T>
+void Sort<T>::quickSort(vector <T> &data, int l, int r, bool (*func) (const T&, const T&)) {
+    if (l >= r)
+        return;
+    int pivot = partition(data, l, r, func);
+    quickSort(data, pivot+1, r, func);
+    quickSort(data, l, pivot-1, func);
+}
+
+template <typename T>
+int Sort<T>::partition(vector <T> &data, int l, int r, bool (*func) (const T&, const T&)) {
+    int pivot = r, idx = l;
+    for (int i = l; i <= r; i++) {
+        if (func(data[i], data[pivot])) {
+            swap(data[i], data[idx]);
+            idx++;
+        }
+    }
+    swap(data[idx], data[r]);
+    return idx;
 }
 
 #endif //SORTING_SORT_H
