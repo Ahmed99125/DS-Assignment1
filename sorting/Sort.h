@@ -7,13 +7,19 @@
 
 #include <vector>
 #include <string>
+#include <fstream>
+#include <chrono>
 
 using namespace std;
 
 template <typename T>
 class Sort {
+private:
+    ofstream file;
 public:
-    Sort() {};
+    Sort(string file_name) {
+        file.open("../" + file_name + ".txt");
+    };
     void sort(vector <T> &data, string algo, bool (*func) (const T&, const T&));
     void bubbleSort(vector <T> &data, bool (*func) (const T&, const T&));
     void selectionSort(vector <T> &data, bool (*func) (const T&, const T&));
@@ -25,24 +31,44 @@ public:
 
 template <typename T>
 void Sort<T>::sort(vector <T> &data, string algo, bool (*func) (const T&, const T&)) {
+    auto start = chrono::high_resolution_clock::now();
+
     if (algo == "bubblesort") {
+        file << "Algorithm: Bubble Sort" << endl;
         bubbleSort(data, func);
     }
     else if (algo == "selectionsort") {
+        file << "Algorithm: Selection Sort" << endl;
         selectionSort(data, func);
     }
     else if (algo == "insertionsort") {
+        file << "Algorithm: Insertion Sort" << endl;
         insertionSort(data, func);
     }
     else if (algo == "shellsort") {
+        file << "Algorithm: Shell Sort" << endl;
         shellSort(data, func);
     }
 //    else if (algo == "mergesort") {
+//        file << "Algorithm: Merge Sort" << endl;
 //        mergeSort(data, func);
 //    }
 //    else if (algo == "quicksort") {
+//        file << "Algorithm: Quick Sort" << endl;
 //        quickSort(data, func);
 //    }
+
+    auto end = std::chrono::high_resolution_clock::now();
+
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+
+
+    file << "Running Time: " << duration.count() << " milliseconds" << endl;
+
+    for (auto i : data) {
+        file << i << endl;
+    }
 }
 
 template <typename T>

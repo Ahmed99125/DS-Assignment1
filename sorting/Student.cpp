@@ -21,3 +21,10 @@ Student &Student::operator=(const Student &other) {
 
     return *this;
 }
+
+std::ostream& operator<<(std::ostream& os, const Student &s) {
+    os << s.name << std::endl;
+    os << s.id << std::endl;
+    os << s.gpa << std::endl;
+    return os;
+}

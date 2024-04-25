@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_sorting: phony || CMakeFiles/sorting.dir
 
 build CMakeFiles/sorting.dir/main.cpp.obj: CXX_COMPILER__sorting_unscanned_Debug D$:/Documents/FCAI/Data$ Structure/Assignment$ 1/sorting/main.cpp || cmake_object_order_depends_target_sorting
   DEP_FILE = CMakeFiles\sorting.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++14
   INCLUDES = -I"D:/Documents/FCAI/Data Structure/Assignment 1/sorting/."
   OBJECT_DIR = CMakeFiles\sorting.dir
   OBJECT_FILE_DIR = CMakeFiles\sorting.dir
@@ -60,7 +60,7 @@ build CMakeFiles/sorting.dir/main.cpp.obj: CXX_COMPILER__sorting_unscanned_Debug
 
 build CMakeFiles/sorting.dir/Student.cpp.obj: CXX_COMPILER__sorting_unscanned_Debug D$:/Documents/FCAI/Data$ Structure/Assignment$ 1/sorting/Student.cpp || cmake_object_order_depends_target_sorting
   DEP_FILE = CMakeFiles\sorting.dir\Student.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++14
   INCLUDES = -I"D:/Documents/FCAI/Data Structure/Assignment 1/sorting/."
   OBJECT_DIR = CMakeFiles\sorting.dir
   OBJECT_FILE_DIR = CMakeFiles\sorting.dir
