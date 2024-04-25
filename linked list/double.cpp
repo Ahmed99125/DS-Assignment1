@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "List.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ struct Node {
 
 template<class T>
 
-class doublell{
+class doublell : List{
 public:
     Node<T>* head{};
     Node<T>* tail{};
@@ -217,7 +218,7 @@ public:
 
 
     // ------- Replacee elemnt --------
-    void replaceAt ( T elemnt , int indx){
+    void replaceAt ( T element , int indx){
         assert(indx >0 && indx<=length);
         Node<T> *curr = get_nth_Node(indx);
         curr->data = elemnt;
