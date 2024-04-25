@@ -3,7 +3,7 @@
 using namespace std;
 
 template <class T>
-class CircularLL : List<T>{
+class CircularLinkedList : List<T>{
 private:
     struct Node {
         T value;
@@ -15,7 +15,7 @@ private:
     Node* head, * tail;
     int length;
 public:
-    CircularLL() : head(nullptr), tail(nullptr), length(0) {};
+    CircularLinkedList() : head(nullptr), tail(nullptr), length(0) {};
     void insertAtHead(T element) {
         Node* newNode = new Node(element);
         newNode->next = head;
@@ -43,7 +43,7 @@ public:
         length++;
     }
 
-    void insertAt(T element, int indx) {
+    void InsertAt(T element, int indx) {
         if(indx == 0)
             insertAtHead(element);
         if(indx == length-1)
