@@ -29,8 +29,8 @@ public:
     Linkedlist (const Linkedlist&) = delete ; // Prevent copying of Linkedlist objects
     Linkedlist &operator=(const Linkedlist &another) = delete;// Prevent copying of LinkedList objects and both of them give compailation error 
     // ------ insert At head -----
-    void insertAtHead( T elemnt){
-        Node<T>* newNode = new Node<T> ( elemnt);
+    void insertAtHead( T element){
+        Node<T>* newNode = new Node<T> ( element);
         if (!head && !tail){
             head = tail = newNode;
             tail->next = nullptr;
@@ -159,10 +159,10 @@ public:
 
 
     // ------- Replacee elemnt --------
-    void replaceAt ( T elemnt , int indx){
+    void replaceAt ( T element , int indx){
         assert(indx >0 && indx<=length);
         Node<T> *curr = get_nth_Node(indx);
-        curr->data = elemnt;
+        curr->data = element;
     }
 
 
