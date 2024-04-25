@@ -11,7 +11,7 @@ class List {
 public:
 
     // ------- insert At Tail ----------
-    virtual void insertAtHead( T elemnt)
+    virtual void insertAtHead( T element)
 
     // ------- insert At Tail ----------
     virtual void insertAtTail ( T element) = 0;
@@ -32,7 +32,7 @@ public:
     virtual T retrieveAt( int indx) = 0;
 
     // ------- Replacee elemnt ------------
-    virtual void replaceAt ( T elemnt , int indx) = 0; 
+    virtual void replaceAt ( T element , int indx) = 0; 
 
     //  ----------- isExist ------------------
     virtual bool isExist(T element ) = 0;
