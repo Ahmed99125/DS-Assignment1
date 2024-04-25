@@ -221,7 +221,7 @@ public:
     void replaceAt ( T element , int indx){
         assert(indx >0 && indx<=length);
         Node<T> *curr = get_nth_Node(indx);
-        curr->data = elemnt;
+        curr->data = element;
     }
 
 
