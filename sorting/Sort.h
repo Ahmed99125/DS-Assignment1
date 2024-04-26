@@ -30,6 +30,10 @@ public:
 
     void merge(vector <T> &data, int l, int mid, int r, bool (*func) (const T&, const T&));
     int partition(vector <T> &data, int l, int r, bool (*func) (const T&, const T&));
+
+    ~Sort() {
+        file.close();
+    }
 };
 
 template <typename T>

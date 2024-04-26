@@ -19,9 +19,19 @@ bool comp(const int &s1, const int &s2) {
 }
 
 int main() {
-    vector <int> v;
-    for (int i = 100000; i >= 0; i--) v.push_back(i);
-    Sort <int> sort1("sortByName");
-    cout << endl;
-    sort1.sort(v, "mergesort", comp);
+    ifstream file("../students.txt");
+    vector <Student> students;
+    int n = 0;
+    file >> n;
+    while (n--) {
+        string id, name, gpa;
+        getline(file >> ws, name);
+        getline(file >> ws, id);
+        getline(file >> ws, gpa);
+        students.push_back(Student(id, name, stod(gpa)));
+    }
+
+    Sort<Student> sort("sortByName");
+    sort.sort(students, "mergesort", compGpa);
+    file.close();
 }
