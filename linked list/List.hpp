@@ -50,7 +50,7 @@ public:
     virtual int linkedListSize() = 0;
 
     // ------Clear the linkedList -----------
-    virtual void clear();
+    virtual void clear() = 0;
 
     // ------- print fun -------
     virtual void print () = 0;
