@@ -80,4 +80,16 @@ void Queue<T>::print() {
     cout << '\n';
 }
 
+int main() {
+    Queue<int> q;
+    q.enqueue(32);
+    q.enqueue(22);
+    cout << q.dequeue() << endl;
+    cout << q.first() << endl;
+    q.clear();
+    q.enqueue(44);
+    q.enqueue(55);
+    q.print();
+}
+
 
