@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "List.h"
+#include "List.hpp"
 
 using namespace std;
 
@@ -236,7 +236,7 @@ public:
 
 
     // ------- is item at pos equal val -------
-    bool isItemnAtEqual(T element , int indx){
+    bool isItemAtEqual(T element , int indx){
         assert( indx > 0 &&  indx <= length );
         Node<T>* curr = get_nth_Node(indx);
         if ( curr->data == element){
@@ -347,7 +347,7 @@ int main (){
     cout << endl << "------------------------------------------------------------\n";
 
     cout << "check if the element at specific indx equal a spcific value  100 at 2  : ";
-    if ( l2.isItemnAtEqual(100, 2 ))
+    if ( l2.isItemAtEqual(100, 2 ))
         cout << "YES\n";
     else cout << "NO\n";
     cout << endl << "------------------------------------------------------------\n";
