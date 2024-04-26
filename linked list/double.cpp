@@ -274,7 +274,6 @@ public:
 
     // ------------- print fun ------------
     void print(){
-        cout << "a7a\n";
         assert(length);
         int cont = 0 ;
         for ( Node<T>* curr = head ; curr ; curr = curr->next){
