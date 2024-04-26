@@ -11,7 +11,7 @@ class List {
 public:
 
     // ------- insert At Tail ----------
-    virtual void insertAtHead( T element)
+    virtual void insertAtHead( T element) = 0;
 
     // ------- insert At Tail ----------
     virtual void insertAtTail ( T element) = 0;
@@ -20,7 +20,7 @@ public:
     virtual void InsertAt ( T element , int indx ) = 0 ;
 
     // ------ Remove At Head ----------
-    virtual void removeAtHead() = 0
+    virtual void removeAtHead() = 0;
 
     // ------ Remove At Tail ---------
     virtual void removeAtTail() = 0;
@@ -38,19 +38,19 @@ public:
     virtual bool isExist(T element ) = 0;
 
     // ------- is item at pos equal val -------
-    virtual bool isItemnAtEqual(T element , int indx) = 0
+    virtual bool isItemAtEqual(T element , int indx) = 0;
 
     // ------- Swap two nodes --------
     virtual void swap(int indx1, int indx2) = 0;
 
     // ------ check if the list is empty or not -----------
-    virtual bool isEmpty() = 0 
+    virtual bool isEmpty() = 0;
         
     // ----------  Get linkedlist size
     virtual int linkedListSize() = 0;
 
     // ------Clear the linkedList -----------
-    virtual void clear()
+    virtual void clear();
 
     // ------- print fun -------
     virtual void print () = 0;
