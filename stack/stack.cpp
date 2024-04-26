@@ -47,9 +47,10 @@ public:
     }
 
     // ---------- remove the last element ----------
-    void pop(){
+    T pop(){
         assert(lenght);
         Node<T>* curr = get_nth_node ( lenght - 1 );
+        T val = tail->data;
         delete tail ;
         lenght--;
         tail = curr;
@@ -57,6 +58,7 @@ public:
         if ( lenght == 0 ){
             head = nullptr;
         }
+        return val;
     }   
 
     // ---------- Get the last element ----------
@@ -108,6 +110,7 @@ int main (){
 
     cout << "Remove the last element from the prev ex : ";
     s.pop();
+    cout << endl;
     s.print();
     cout << "------------------------------------------------------------------------\n";
 
